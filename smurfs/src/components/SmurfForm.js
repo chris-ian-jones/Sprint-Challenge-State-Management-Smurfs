@@ -21,12 +21,12 @@ const SmurfForm = (props) => {
   return (
     <>
       <h3>Add a smurf!</h3>
-      <form onSubmit>
-        <input name= "name" value={formState.name} placeholder='Name'onChange={handleChanges} />
-        <input name= "age" value={formState.age} placeholder='Age'onChange={handleChanges} />
-        <input name= "height" value={formState.height} placeholder='Height' onChange={handleChanges} />
-        <button onClick={() => props.addSmurfData(formState)}>Add</button>
-      </form>
+        <form>
+          <input name= "name" value={formState.name} placeholder='Name'onChange={handleChanges} />
+          <input name= "age" value={formState.age} placeholder='Age'onChange={handleChanges} />
+          <input name= "height" value={formState.height} placeholder='Height' onChange={handleChanges} />
+          <button onClick={() => props.addSmurfData(formState)}>Add</button>
+        </form>
     </>
   )
 }
