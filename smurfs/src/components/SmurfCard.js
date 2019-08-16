@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 
 const SmurfCard = props => {
   console.log('<SmurfCard /> props: ', props)
-  
+
   return (
     <Card>
       <Card.Content>
@@ -22,6 +22,7 @@ const SmurfCard = props => {
           {props.smurfData.id}
         </a>
       </Card.Content>
+      <button onClick={() => props.deleteSmurfData(props.smurfData.id)}>Delete</button>
     </Card>
   )
 }
