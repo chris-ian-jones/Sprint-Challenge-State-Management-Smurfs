@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import "./App.css";
 import SmurfList from './SmurfList'
+import SmurfForm from './SmurfForm'
 import { getSmurfData } from './../actions'
 
 function App(props) {
@@ -13,6 +14,7 @@ function App(props) {
       <div>Welcome to your state management version of Smurfs!</div>
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
+      <SmurfForm />
       <button onClick={props.getSmurfData}>Get Smurf Data!</button>
       <SmurfList smurfArray={props.smurfArray} />
     </div>
