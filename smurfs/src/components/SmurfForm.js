@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
 const SmurfForm = (props) => {
-  
+  console.log('<SmurfForm /> props: ', props)
 
   const [formState, setFormState] = useState({
     name: '',
     age: '',
     height: '',
-    id: ''
+    id: Date.now()
   })
   console.log('<SmurfForm /> formState: ', formState)
   
@@ -21,11 +21,11 @@ const SmurfForm = (props) => {
   return (
     <>
       <h3>Add a smurf!</h3>
-      <form>
+      <form onSubmit>
         <input name= "name" value={formState.name} placeholder='Name'onChange={handleChanges} />
         <input name= "age" value={formState.age} placeholder='Age'onChange={handleChanges} />
         <input name= "height" value={formState.height} placeholder='Height' onChange={handleChanges} />
-        <button>Add</button>
+        <button onClick={() => props.addSmurfData(formState)}>Add</button>
       </form>
     </>
   )

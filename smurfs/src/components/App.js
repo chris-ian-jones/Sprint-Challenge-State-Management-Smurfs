@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import "./App.css";
 import SmurfList from './SmurfList'
 import SmurfForm from './SmurfForm'
-import { getSmurfData } from './../actions'
+import { getSmurfData, addSmurfData } from './../actions'
 
 function App(props) {
   console.log('<App/> props: ', props)
@@ -14,7 +14,7 @@ function App(props) {
       <div>Welcome to your state management version of Smurfs!</div>
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
-      <SmurfForm />
+      <SmurfForm addSmurfData={props.addSmurfData}/>
       <button onClick={props.getSmurfData}>Get Smurf Data!</button>
       <SmurfList smurfArray={props.smurfArray} />
     </div>
@@ -25,4 +25,4 @@ const mapStateToProps = state => {
   return state
 }
 
-export default connect(mapStateToProps, {getSmurfData})(App)
+export default connect(mapStateToProps, {getSmurfData, addSmurfData})(App)
