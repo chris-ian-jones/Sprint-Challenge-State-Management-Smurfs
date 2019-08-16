@@ -7,7 +7,7 @@ const SmurfForm = (props) => {
     name: '',
     age: '',
     height: '',
-    id: Date.now()
+    id: ''
   })
   console.log('<SmurfForm /> formState: ', formState)
   
@@ -25,7 +25,16 @@ const SmurfForm = (props) => {
           <input name= "name" value={formState.name} placeholder='Name'onChange={handleChanges} />
           <input name= "age" value={formState.age} placeholder='Age'onChange={handleChanges} />
           <input name= "height" value={formState.height} placeholder='Height' onChange={handleChanges} />
-          <button onClick={() => props.addSmurfData(formState)}>Add</button>
+          <button onClick={(event) => {
+            event.preventDefault()
+            props.addSmurfData(formState)
+            setFormState({
+              name: '',
+              age: '',
+              height: '',
+              id: ''
+            })
+          }}>Add</button>
         </form>
     </>
   )

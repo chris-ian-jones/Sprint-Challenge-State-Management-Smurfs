@@ -15,7 +15,11 @@ export const POST_SMURF_DATA_SUCCESS = 'POST_SMURF_DATA_SUCCESS'
 
 export const addSmurfData = (smurfData) => dispatch => {
   dispatch({ type: FETCH_SMURF_DATA_START })
-  axios.post(`http://localhost:3333/smurfs`, smurfData)
+  const smurfWithId = {
+    ...smurfData,
+    id: Date.now()
+  }
+  axios.post(`http://localhost:3333/smurfs`, smurfWithId)
     .then(result => dispatch({ type: POST_SMURF_DATA_SUCCESS, payload: smurfData }))
     .catch(error => dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: 'API error'}))
 }
@@ -28,6 +32,18 @@ export const deleteSmurfData = (smurfId) => dispatch => {
     .then(result => {
       console.log('DELETE_SMURF_DATA_SUCCESS result : ', result)
       dispatch({ type: DELETE_SMURF_DATA_SUCCESS, payload: result.data })
+    })
+    .catch(error => dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: 'API error'}))
+}
+
+export const EDIT_SMURF_DATA_SUCCESS = 'EDIT_SMURF_DATA_SUCCESS'
+
+export const editSmurfData = (smurfData) => dispatch => {
+  dispatch({ type: FETCH_SMURF_DATA_START })
+  axios.put(`http://localhost:3333/smurfs/${smurfData.id}, smurfData`)
+    .then(result => {
+      console.log('EDIT_SMURF_DATA_SUCCESS result : ', result)
+      dispatch({ type: EDIT_SMURF_DATA_SUCCESS, payload: result.data })
     })
     .catch(error => dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: 'API error'}))
 }

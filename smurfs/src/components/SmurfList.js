@@ -15,7 +15,7 @@ const SmurfList = props => {
     <>
       <h1>List of smurfs!</h1>
       <StyledContainer>
-        {props.smurfArray && props.smurfArray.map(smurf => <SmurfCard key={smurf.id} smurfData={smurf} deleteSmurfData={props.deleteSmurfData} />)}
+        {props.smurfArray && props.smurfArray.map(smurf => <SmurfCard key={smurf.id} smurfData={smurf} deleteSmurfData={props.deleteSmurfData} editSmurfData={props.editSmurfData} />)}
       </StyledContainer>
     </>
   )
