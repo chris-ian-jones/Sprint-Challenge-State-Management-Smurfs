@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 
 const SmurfForm = (props) => {
-  console.log('<SmurfForm /> props: ', props)
-
+  // console.log('<SmurfForm /> props: ', props)
   const [formState, setFormState] = useState({
     name: '',
     age: '',
     height: '',
     id: ''
   })
-  console.log('<SmurfForm /> formState: ', formState)
+  // console.log('<SmurfForm /> formState: ', formState)
   
   const handleChanges = event => {
     setFormState({

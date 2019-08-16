@@ -3,7 +3,7 @@ import { Card, Icon } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
 const SmurfCard = props => {
-  console.log('<SmurfCard /> props: ', props)
+  // console.log('<SmurfCard /> props: ', props)
   const [inputState, setInputState] = useState({
     id: props.smurfData.id,
     name: '',
@@ -23,16 +23,16 @@ const SmurfCard = props => {
       <Card.Content>
         <Card.Header>{props.smurfData.name}</Card.Header>
         <Card.Meta>
-          <span className='date'>J{props.smurfData.age}</span>
+          <span className='date'>Age: {props.smurfData.age}</span>
         </Card.Meta>
         <Card.Description>
-          {props.smurfData.height}
+          Height: {props.smurfData.height}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <a>
           <Icon name='id badge outline' />
-          {props.smurfData.id}
+          ID: {props.smurfData.id}
         </a>
       </Card.Content>
       <input name= "name" value={inputState.name} placeholder='New name'onChange={handleChanges} />

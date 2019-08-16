@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from 'react-redux'
-import styled from 'styled-components'
 
 import "./App.css";
 import SmurfList from './SmurfList'
@@ -12,9 +11,13 @@ function App(props) {
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
-      <SmurfForm addSmurfData={props.addSmurfData}/>
+      <SmurfForm addSmurfData={props.addSmurfData} />
       <button onClick={props.getSmurfData}>Get Smurf Data!</button>
-      <SmurfList smurfArray={props.smurfArray} deleteSmurfData={props.deleteSmurfData} editSmurfData={props.editSmurfData}/>
+      <SmurfList 
+        smurfArray={props.smurfArray} 
+        deleteSmurfData={props.deleteSmurfData} 
+        editSmurfData={props.editSmurfData}
+      />
     </div>
   );
 }
@@ -23,4 +26,12 @@ const mapStateToProps = state => {
   return state
 }
 
-export default connect(mapStateToProps, { getSmurfData, addSmurfData, deleteSmurfData, editSmurfData })(App)
+export default connect(
+  mapStateToProps, 
+  { 
+    getSmurfData, 
+    addSmurfData, 
+    deleteSmurfData, 
+    editSmurfData
+  }
+)(App)
