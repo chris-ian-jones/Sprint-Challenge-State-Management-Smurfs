@@ -23,10 +23,28 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+The context API solves the problem of accessing state which needs to be global, context api allows us to share state between components without having to pass props through every level of the tree,.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+In redux, actions are JSON objects which represent events. They are closely linked to ‘Action Creators’ functions.
+
+Reducers are functions that take an Action as well as the current state, then then apply the action to the current state and return a new state in the form of an object. Redux then re-renders all components as there is a new state.
+
+The ‘store’ is the object which brings all of the above together, and is know as the ‘single’ source of truth as there will only ever be one ’store’ in a redux application.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is like a global state which can be accessed if needed in any component in our app, an example will be the logged in user details. Whereas component state refers to state which is only nessecasry for that component, an example would be the state of an input.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux thunk is a middleware which allows us to perform async logic that interacts with the redux ’store’. They do this by allowing us to use action creators that return a function instead of an action (object). An example would be to have an axis call in the function which returns data as a payload for the action.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I've grown to love redux, I know it will eventually be replaced by newer state management paradigms, but I enjoy using it and will practise using it going forward!
 
 ## Project Set Up
 
